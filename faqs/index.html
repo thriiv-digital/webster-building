@@ -95,7 +95,7 @@
   header.scrolled .nav-toggle { color:var(--text-dark); }
 
   @media (max-width:900px) {
-    .nav-links { position:fixed; top:113px; left:0; right:0; background:var(--white); flex-direction:column; align-items:flex-start; gap:0; padding:8px 24px 20px; border-bottom:1px solid var(--border); transform:translateY(-12px); opacity:0; pointer-events:none; transition:all 0.25s; }
+    .nav-links { position:absolute; top:100%; left:0; right:0; background:var(--white); flex-direction:column; align-items:flex-start; gap:0; padding:8px 24px 20px; border-bottom:1px solid var(--border); transform:translateY(-12px); opacity:0; pointer-events:none; transition:all 0.25s; }
     .nav-links.open { transform:translateY(0); opacity:1; pointer-events:auto; }
     .nav-links li { width:100%; }
     .nav-links a { display:block; padding:14px 0; border-bottom:1px solid var(--border); width:100%; color:var(--text-dark); }
@@ -112,6 +112,7 @@
   /* HERO */
   .hero-section { padding:25px; }
   .hero-media { position:relative; border-radius:var(--radius); overflow:hidden; min-height:480px; display:flex; align-items:flex-end; justify-content:center; }
+  @media (max-width:640px) { .hero-media { min-height:620px; } }
   .hero-media img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; transform-origin:center; animation:heroZoom 20s ease-in-out infinite alternate; }
   @keyframes heroZoom { from{ transform:scale(1); } to{ transform:scale(1.07); } }
   .hero-media::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.35) 100%); z-index:1; }
@@ -183,6 +184,7 @@
   @media (max-width:860px) { .footer-grid { grid-template-columns:1fr 1fr; gap:40px 24px; } }
   @media (max-width:520px) { .footer-grid { grid-template-columns:1fr; gap:36px; } }
   .footer-brand-logo { height:120px; width:auto; margin-bottom:18px; }
+  @media (max-width:520px) { .footer-brand-logo { height:64px; } }
   .footer-brand p { color:rgba(255,255,255,0.7); font-size:14.5px; max-width:320px; margin-bottom:22px; }
   .footer-socials { display:flex; align-items:center; gap:18px; margin-bottom:22px; }
   .footer-socials .icon-link { color:var(--white); }
