@@ -62,6 +62,7 @@
   .nav-links { display:flex; align-items:center; gap:36px; list-style:none; }
   @media (min-width:901px) { .nav-links, .nav-right { margin-top:-25px; } header.scrolled .nav-links, header.scrolled .nav-right { margin-top:0; } }
   .nav-links a { text-decoration:none; color:var(--white); font-size:14px; font-weight:400; letter-spacing:0.5px; text-transform:uppercase; padding:8px 14px; border-radius:100px; transition:background-color 0.2s, color 0.2s; }
+  .mobile-only-link { display:none; }
   .nav-links a:hover { background:rgba(255,255,255,0.2); color:var(--white); }
   header.scrolled .nav-links a { color:var(--text-dark); }
   header.scrolled .nav-links a:hover { background:var(--cream); color:var(--text-dark); }
@@ -103,6 +104,7 @@
     .nav-links { position:absolute; top:100%; left:0; right:0; background:var(--white); flex-direction:column; align-items:flex-start; gap:0; padding:8px 24px 20px; border-bottom:1px solid var(--border); transform:translateY(-12px); opacity:0; pointer-events:none; transition:all 0.25s; }
     .nav-links.open { transform:translateY(0); opacity:1; pointer-events:auto; }
     .nav-links li { width:100%; }
+    .mobile-only-link { display:list-item; }
     .nav-links a { display:block; padding:14px 0; border-bottom:1px solid var(--border); width:100%; color:var(--text-dark); }
     .nav-right .btn-cta { padding:11px 20px; font-size:13px; }
     .nav-toggle { display:block; }
@@ -111,7 +113,7 @@
     .dropdown-toggle:hover { background:none; }
     .dropdown-menu { padding-left:16px; max-height:0; overflow:hidden; transition:max-height 0.25s ease; }
     .nav-dropdown.open .dropdown-menu { max-height:400px; }
-    .dropdown-menu a { border-bottom:1px solid var(--border); color:var(--text-dark); }
+    .dropdown-menu a { border-bottom:1px solid var(--border); color:var(--text-dark); font-size:14px; font-weight:400; text-transform:uppercase; letter-spacing:0.5px; }
   }
 
   /* HERO */
@@ -213,7 +215,9 @@
   @media (max-width:860px) { .testimonial-card { flex:0 0 100%; } }
   .testimonial-card:hover { transform:translateY(-6px); box-shadow:0 16px 32px rgba(0,0,0,0.08); }
   .testimonials-dots { display:flex; justify-content:center; gap:10px; margin-top:32px; }
-  .testimonial-dot { width:8px; height:8px; border-radius:50%; background:var(--border); border:none; padding:0; cursor:pointer; transition:background-color 0.3s, width 0.3s; }
+  .testimonial-dot { position:relative; width:8px; height:8px; border-radius:50%; background:var(--border); border:none; padding:0; cursor:pointer; transition:background-color 0.3s, width 0.3s; }
+  .testimonial-dot::before { content:''; position:absolute; top:50%; left:50%; width:34px; height:34px; transform:translate(-50%,-50%); }
+  .testimonials-carousel { touch-action:pan-y; }
   .testimonial-dot:hover { background:var(--text-mid); }
   .testimonial-dot.active { background:var(--text-dark); width:24px; border-radius:4px; }
   .testimonial-stars { color:var(--gold); font-size:16px; letter-spacing:2px; margin-bottom:18px; }
@@ -335,6 +339,7 @@
       <li><a href="/faqs/">FAQs</a></li>
       <li><a href="/about-us/">About</a></li>
       <li><a href="/resources/">Resources</a></li>
+      <li class="mobile-only-link"><a href="/contact-us/">Contact</a></li>
     </ul>
     <div class="nav-right">
       <a href="https://www.instagram.com/websterbuilding/" class="icon-link desktop-only" aria-label="Instagram" target="_blank" rel="noopener">
@@ -919,6 +924,30 @@
         goToTestimonial(i, true);
         autoplay = setInterval(slideTestimonials, 4500);
       });
+    });
+
+    let touchStartX = 0;
+    let touchDeltaX = 0;
+    const carousel = document.querySelector('.testimonials-carousel');
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchDeltaX = 0;
+      clearInterval(autoplay);
+    }, { passive: true });
+    carousel.addEventListener('touchmove', (e) => {
+      touchDeltaX = e.touches[0].clientX - touchStartX;
+    }, { passive: true });
+    carousel.addEventListener('touchend', () => {
+      if (Math.abs(touchDeltaX) > 40) {
+        if (touchDeltaX < 0) {
+          slideTestimonials();
+        } else if (testimonialIndex > 0) {
+          goToTestimonial(testimonialIndex - 1, true);
+        } else {
+          goToTestimonial(totalOriginal - 1, true);
+        }
+      }
+      autoplay = setInterval(slideTestimonials, 4500);
     });
   }
 </script>
