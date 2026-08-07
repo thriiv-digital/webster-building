@@ -92,21 +92,25 @@
   .nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:4px; color:var(--white); }
   .nav-toggle svg { width:26px; height:26px; }
   header.scrolled .nav-toggle { color:var(--text-dark); }
+  .nav-overlay { position:fixed; inset:0; background:rgba(20,18,12,0.45); opacity:0; pointer-events:none; transition:opacity 0.35s ease; z-index:390; }
+  .nav-overlay.open { opacity:1; pointer-events:auto; }
+  body.nav-open { overflow:hidden; }
 
   @media (max-width:900px) {
-    .nav-links { position:absolute; top:100%; left:0; right:0; background:var(--white); flex-direction:column; align-items:flex-start; gap:0; padding:8px 24px 20px; border-bottom:1px solid var(--border); transform:translateY(-12px); opacity:0; pointer-events:none; transition:all 0.25s; }
-    .nav-links.open { transform:translateY(0); opacity:1; pointer-events:auto; }
+    .nav-links { position:fixed; top:0; right:0; left:auto; width:min(84vw,340px); max-width:340px; height:100vh; height:100dvh; background:var(--white); flex-direction:column; align-items:stretch; gap:2px; padding:100px 28px 32px; overflow-y:auto; box-shadow:-16px 0 48px rgba(0,0,0,0.16); transform:translateX(100%); opacity:1; pointer-events:none; transition:transform 0.35s ease; z-index:400; }
+    .nav-links.open { transform:translateX(0); pointer-events:auto; }
     .nav-links li { width:100%; }
     .mobile-only-link { display:list-item; }
-    .nav-links a { display:block; padding:14px 0; border-bottom:1px solid var(--border); width:100%; color:var(--text-dark); }
+    .nav-links a { display:block; padding:14px 6px; border-radius:12px; width:100%; color:var(--text-dark); transition:background-color 0.2s; }
+    .nav-links a:active { background:var(--cream); }
     .nav-right .btn-cta { padding:11px 20px; font-size:13px; }
     .nav-toggle { display:block; }
     .icon-link.desktop-only { display:none; }
-    .dropdown-toggle { width:100%; justify-content:space-between; padding:14px 0; border-bottom:1px solid var(--border); border-radius:0; border-left:none; border-right:none; border-top:none; color:var(--text-dark); }
-    .dropdown-toggle:hover { background:none; }
-    .dropdown-menu { padding-left:16px; max-height:0; overflow:hidden; transition:max-height 0.25s ease; }
+    .dropdown-toggle { width:100%; justify-content:space-between; padding:14px 6px; border-radius:12px; border:none; color:var(--text-dark); }
+    .dropdown-toggle:hover, .dropdown-toggle:active { background:var(--cream); }
+    .dropdown-menu { padding-left:10px; max-height:0; overflow:hidden; transition:max-height 0.25s ease; }
     .nav-dropdown.open .dropdown-menu { max-height:400px; }
-    .dropdown-menu a { border-bottom:1px solid var(--border); color:var(--text-dark); font-size:14px; font-weight:400; text-transform:uppercase; letter-spacing:0.5px; }
+    .dropdown-menu a { color:var(--text-dark); font-size:14px; font-weight:400; text-transform:uppercase; letter-spacing:0.5px; padding:12px 6px; border-radius:12px; }
   }
 
   /* HERO */
@@ -219,12 +223,13 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M15 8.5h-1.8c-1 0-1.7.7-1.7 1.7V12H9v2.5h2.5V21h2.6v-6.5h2.1l.4-2.5h-2.5v-1.4c0-.4.3-.6.6-.6H15V8.5z"/></svg>
       </a>
       <a href="#" class="btn-cta" data-modal="quoteModal">Let's Talk</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg id="navToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </div>
 </header>
+<div class="nav-overlay" id="navOverlay"></div>
 
 <section class="hero-section">
   <div class="hero-media">
@@ -419,13 +424,23 @@
     return false;
   }
   const navToggle = document.getElementById('navToggle');
+  const navToggleIcon = document.getElementById('navToggleIcon');
   const navLinks = document.getElementById('navLinks');
+  const navOverlay = document.getElementById('navOverlay');
   const servicesDropdown = document.getElementById('servicesDropdown');
-  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    servicesDropdown.classList.remove('open');
-  }));
+  const hamburgerIcon = '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
+  const closeIcon = '<line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/>';
+  function setNavOpen(open) {
+    navLinks.classList.toggle('open', open);
+    navOverlay.classList.toggle('open', open);
+    document.body.classList.toggle('nav-open', open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggleIcon.innerHTML = open ? closeIcon : hamburgerIcon;
+    if (!open) servicesDropdown.classList.remove('open');
+  }
+  navToggle.addEventListener('click', () => setNavOpen(!navLinks.classList.contains('open')));
+  navOverlay.addEventListener('click', () => setNavOpen(false));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNavOpen(false)));
 
   const dropdownToggle = servicesDropdown.querySelector('.dropdown-toggle');
   dropdownToggle.addEventListener('click', () => servicesDropdown.classList.toggle('open'));
