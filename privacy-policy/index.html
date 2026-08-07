@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | Webster Building</title>
+<meta name="description" content="How Webster Building collects, uses, and protects your personal information.">
+<link rel="icon" type="image/png" href="/images/webster/logo-badge.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
+<style>
+  :root {
+    --black: #000000;
+    --cream: #f4f1ea;
+    --cream-2: #efece3;
+    --white: #ffffff;
+    --off-white: #f8f9fc;
+    --border: #e4e0d5;
+    --text-dark: #1a1812;
+    --text-mid: #4a4739;
+    --gold: #f4c430;
+    --radius: 24px;
+    --radius-sm: 14px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Inter',sans-serif; color:var(--text-dark); background:var(--white); overflow-x:hidden; line-height:1.6; }
+  h1,h2,h3,h4 { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; line-height:1.15; font-weight:300; letter-spacing:-0.3px; }
+  img { max-width:100%; display:block; }
+  a { color:inherit; }
+
+  /* HEADER (always solid — no hero photo on this page) */
+  header { position:sticky; top:0; z-index:200; background:var(--white); box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+  .nav-inner { max-width:1240px; margin:0 auto; padding:10px 24px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .logo { display:flex; align-items:center; text-decoration:none; color:var(--text-dark); }
+  .logo img { height:64px; width:auto; flex-shrink:0; }
+  .footer-logo { height:98px; width:auto; margin:0 auto; display:block; }
+  .nav-links { display:flex; align-items:center; gap:36px; list-style:none; }
+  .nav-links a { text-decoration:none; color:var(--text-dark); font-size:14px; font-weight:400; letter-spacing:0.5px; text-transform:uppercase; padding:8px 14px; border-radius:100px; transition:background-color 0.2s, color 0.2s; }
+  .nav-links a:hover { background:var(--cream); color:var(--text-dark); }
+
+  .nav-dropdown { position:relative; }
+  .dropdown-toggle { display:flex; align-items:center; gap:7px; background:none; border:1px solid var(--border); color:var(--text-dark); font-family:'Inter',sans-serif; font-size:14px; font-weight:400; letter-spacing:0.5px; text-transform:uppercase; padding:8px 14px; border-radius:100px; cursor:pointer; transition:background-color 0.2s, border-color 0.2s; }
+  .dropdown-toggle:hover { background:var(--cream); }
+  .dropdown-chevron { width:7px; height:7px; border-right:1.6px solid currentColor; border-bottom:1.6px solid currentColor; transform:rotate(45deg); margin-top:-4px; transition:transform 0.2s; flex-shrink:0; }
+  .nav-dropdown:hover .dropdown-chevron, .nav-dropdown.open .dropdown-chevron { transform:rotate(-135deg); margin-top:2px; }
+  .dropdown-menu { list-style:none; }
+  .dropdown-menu a { text-decoration:none; color:var(--text-dark); }
+  @media (min-width:901px) {
+    .nav-dropdown:hover .dropdown-toggle, .nav-dropdown.open .dropdown-toggle { background:var(--cream); border-color:var(--text-dark); }
+    .nav-dropdown::after { content:''; position:absolute; left:0; right:0; top:100%; height:14px; }
+    .dropdown-menu { position:absolute; top:calc(100% + 14px); left:0; background:var(--white); border-radius:18px; box-shadow:0 20px 48px rgba(0,0,0,0.16); border:1px solid var(--border); padding:10px; min-width:230px; display:flex; flex-direction:column; gap:2px; z-index:10; opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; pointer-events:none; }
+    .nav-dropdown:hover .dropdown-menu, .nav-dropdown.open .dropdown-menu { opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto; }
+    .dropdown-menu a { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 16px; border-radius:12px; font-size:14.5px; font-weight:500; text-transform:none; letter-spacing:0; }
+    .dropdown-menu a::after { content:'\2192'; opacity:0; transform:translateX(-4px); transition:opacity 0.2s, transform 0.2s; }
+    .dropdown-menu a.enquire-link::after { content:'Enquire \2192'; font-size:11.5px; letter-spacing:0.5px; text-transform:uppercase; font-weight:600; color:#a3a3a3; }
+    .dropdown-menu a:hover::after { opacity:1; transform:translateX(0); }
+  }
+  .nav-right { display:flex; align-items:center; gap:22px; }
+  .icon-link { width:22px; height:22px; display:flex; align-items:center; justify-content:center; color:var(--text-dark); }
+  .icon-link svg { width:22px; height:22px; }
+  .btn-cta { background:var(--black); color:var(--white); padding:13px 26px; border-radius:100px; font-weight:600; font-size:14px; text-decoration:none; text-transform:uppercase; letter-spacing:0.5px; white-space:nowrap; transition:opacity 0.2s, transform 0.2s; display:inline-block; border:none; cursor:pointer; }
+  .btn-cta:hover { opacity:0.82; transform:translateY(-2px); }
+  .nav-right .btn-cta { background:var(--cream); color:var(--text-dark); }
+  .nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:4px; color:var(--text-dark); }
+  .nav-toggle svg { width:26px; height:26px; }
+
+  @media (max-width:900px) {
+    .nav-links { position:fixed; top:84px; left:0; right:0; background:var(--white); flex-direction:column; align-items:flex-start; gap:0; padding:8px 24px 20px; border-bottom:1px solid var(--border); transform:translateY(-12px); opacity:0; pointer-events:none; transition:all 0.25s; }
+    .nav-links.open { transform:translateY(0); opacity:1; pointer-events:auto; }
+    .nav-links li { width:100%; }
+    .nav-links a { display:block; padding:14px 0; border-bottom:1px solid var(--border); width:100%; }
+    .nav-right .btn-cta { padding:11px 20px; font-size:13px; }
+    .nav-toggle { display:block; }
+    .icon-link.desktop-only { display:none; }
+    .dropdown-toggle { width:100%; justify-content:space-between; padding:14px 0; border-bottom:1px solid var(--border); border-radius:0; border-left:none; border-right:none; border-top:none; }
+    .dropdown-toggle:hover { background:none; }
+    .dropdown-menu { padding-left:16px; max-height:0; overflow:hidden; transition:max-height 0.25s ease; }
+    .nav-dropdown.open .dropdown-menu { max-height:400px; }
+    .dropdown-menu a { border-bottom:1px solid var(--border); }
+  }
+
+  /* PAGE HEADER */
+  .page-header { background:var(--cream); padding:72px 24px 56px; text-align:center; }
+  .page-header h1 { font-size:clamp(32px,4.4vw,48px); font-weight:300; margin-bottom:10px; }
+  .page-header p { color:var(--text-mid); font-size:14.5px; }
+
+  /* LEGAL CONTENT */
+  .legal-section { padding:64px 24px 100px; }
+  .legal-inner { max-width:800px; margin:0 auto; }
+  .legal-inner h2 { font-size:22px; font-weight:600; margin:44px 0 14px; }
+  .legal-inner h2:first-child { margin-top:0; }
+  .legal-inner p { color:var(--text-mid); font-size:16px; margin-bottom:16px; }
+  .legal-inner ul { margin:0 0 16px 22px; color:var(--text-mid); font-size:16px; }
+  .legal-inner li { margin-bottom:10px; }
+  .legal-inner li strong { color:var(--text-dark); }
+  .legal-inner a { color:var(--text-dark); text-decoration:underline; }
+
+  /* FOOTER */
+  footer { background:var(--black); color:var(--white); padding:80px 24px 32px; }
+  .footer-inner { max-width:1240px; margin:0 auto; }
+  .footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:48px; padding-bottom:52px; margin-bottom:28px; border-bottom:1px solid rgba(255,255,255,0.12); }
+  @media (max-width:860px) { .footer-grid { grid-template-columns:1fr 1fr; gap:40px 24px; } }
+  @media (max-width:520px) { .footer-grid { grid-template-columns:1fr; gap:36px; } }
+  .footer-brand-logo { height:120px; width:auto; margin-bottom:18px; }
+  .footer-brand p { color:rgba(255,255,255,0.7); font-size:14.5px; max-width:320px; margin-bottom:22px; }
+  .footer-socials { display:flex; align-items:center; gap:18px; margin-bottom:22px; }
+  .footer-socials .icon-link { color:var(--white); }
+  .footer-col h4 { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:rgba(255,255,255,0.5); margin-bottom:18px; }
+  .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:12px; }
+  .footer-col a { text-decoration:none; color:rgba(255,255,255,0.85); font-size:14.5px; transition:color 0.2s; }
+  .footer-col a:hover { color:var(--white); }
+  .footer-col address { font-style:normal; display:flex; flex-direction:column; gap:12px; margin-bottom:20px; }
+  .footer-col address span { color:rgba(255,255,255,0.7); font-size:14px; display:block; }
+  footer .btn-cta, footer .btn-cta:hover { background:var(--cream); color:var(--text-dark); }
+  .footer-row { width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13.5px; }
+  .footer-legal { display:flex; align-items:center; gap:10px; flex-wrap:wrap; color:var(--white); opacity:0.85; }
+  .footer-legal a { text-decoration:none; color:var(--white); transition:opacity 0.2s; }
+  .footer-legal a:hover { opacity:0.7; }
+  .footer-sep { opacity:0.4; }
+  .footer-credit { text-decoration:none; color:var(--white); opacity:0.85; transition:opacity 0.2s; }
+  .footer-credit:hover { opacity:1; }
+  @media (max-width:600px) {
+    .footer-row { flex-direction:column; align-items:center; gap:12px; text-align:center; }
+    .footer-legal { flex-direction:column; gap:8px; }
+  }
+
+  /* MODAL */
+  .modal-overlay { position:fixed; inset:0; background:rgba(20,18,14,0.6); z-index:500; display:flex; align-items:center; justify-content:center; padding:24px; opacity:0; pointer-events:none; transition:opacity 0.25s ease; }
+  .modal-overlay.open { opacity:1; pointer-events:auto; }
+  .modal-box { background:var(--white); border-radius:var(--radius); padding:48px; max-width:520px; width:100%; max-height:88vh; overflow-y:auto; position:relative; transform:translateY(16px) scale(0.98); transition:transform 0.25s ease; }
+  @media (max-width:600px) { .modal-box { padding:32px 24px; } }
+  .modal-overlay.open .modal-box { transform:translateY(0) scale(1); }
+  .modal-close { position:absolute; top:18px; right:18px; width:36px; height:36px; display:flex; align-items:center; justify-content:center; background:var(--cream); border:none; border-radius:50%; font-size:20px; line-height:1; cursor:pointer; color:var(--text-dark); transition:background 0.2s; }
+  .modal-close:hover { background:var(--cream-2); }
+  .modal-box h3 { font-size:26px; margin-bottom:10px; }
+  .modal-box-subtitle { color:var(--text-mid); font-size:15px; margin-bottom:24px; }
+  .form-group { margin-bottom:22px; }
+  .form-group label { display:block; font-size:14.5px; font-weight:500; margin-bottom:8px; }
+  .form-group input, .form-group textarea { width:100%; border:1px solid var(--border); background:var(--white); border-radius:10px; padding:13px 16px; font-family:'Inter',sans-serif; font-size:15px; resize:vertical; }
+  .form-group input:focus, .form-group textarea:focus { outline:none; border-color:var(--text-dark); }
+  .form-group input[type="file"] { border:1px dashed var(--border); padding:12px 16px; cursor:pointer; font-size:13.5px; color:var(--text-mid); }
+  .form-submit { width:100%; background:var(--black); color:var(--white); border:none; border-radius:100px; padding:16px; font-size:16px; font-weight:600; cursor:pointer; font-family:'Inter',sans-serif; transition:opacity 0.2s; }
+  .form-submit:hover { opacity:0.85; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="/images/webster/logo-badge.png" alt="Webster Building">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li class="nav-dropdown" id="servicesDropdown">
+        <button type="button" class="dropdown-toggle">Our Services <span class="dropdown-chevron"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="/services/fireplaces-mantels/">Fireplaces</a></li>
+          <li><a href="/services/flooring/">Flooring</a></li>
+          <li><a href="/services/decks-pergolas/">Decks &amp; Pergolas</a></li>
+          <li><a href="#" class="enquire-link" data-modal="quoteModal">Fencing</a></li>
+          <li><a href="/services/carpentry/">Residential Carpentry &amp; Repairs</a></li>
+        </ul>
+      </li>
+      <li><a href="/faqs/">FAQs</a></li>
+      <li><a href="/about-us/">About</a></li>
+      <li><a href="/resources/">Resources</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://www.instagram.com/websterbuilding/" class="icon-link desktop-only" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+      </a>
+      <a href="https://www.facebook.com/p/Webster-Building-61558741212072/" class="icon-link desktop-only" aria-label="Facebook" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M15 8.5h-1.8c-1 0-1.7.7-1.7 1.7V12H9v2.5h2.5V21h2.6v-6.5h2.1l.4-2.5h-2.5v-1.4c0-.4.3-.6.6-.6H15V8.5z"/></svg>
+      </a>
+      <a href="#" class="btn-cta" data-modal="quoteModal">Let's Talk</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="page-header">
+  <h1>Privacy Policy</h1>
+  <p>Last Updated: July 2026</p>
+</section>
+
+<section class="legal-section">
+  <div class="legal-inner">
+    <p>At Webster Building, we respect your privacy and are committed to protecting the personal information you share with us. This Privacy Policy outlines how we collect, use, and manage your data.</p>
+
+    <h2>Information We Collect</h2>
+    <p>We only collect information that is reasonably necessary to provide you with our carpentry and building services. This may include:</p>
+    <ul>
+      <li><strong>Contact Details:</strong> Your name, phone number, email address, and physical address (for site visits and project locations).</li>
+      <li><strong>Project Information:</strong> Details about your home, renovation plans, council approvals, or photos of the work site.</li>
+      <li><strong>Financial Details:</strong> Information required to process payments or invoices (such as bank details).</li>
+    </ul>
+
+    <h2>How We Collect Information</h2>
+    <p>We collect information directly from you when you:</p>
+    <ul>
+      <li>Fill out a contact form on our website or social media.</li>
+      <li>Request a quote or book an on-site consultation.</li>
+      <li>Communicate with us via phone, email, or text.</li>
+    </ul>
+
+    <h2>How We Use Your Information</h2>
+    <p>We use your personal data strictly to run our business and deliver quality workmanship. Specifically, for:</p>
+    <ul>
+      <li>Providing quotes, invoicing, and managing project communications.</li>
+      <li>Organising materials, deliveries, and subcontractor services (if required for your project).</li>
+      <li>Answering your enquiries and providing customer support.</li>
+    </ul>
+
+    <h2>Sharing and Security</h2>
+    <p>We never sell your personal information. We only share your details with third parties when essential to complete your project (e.g., local material suppliers, certifiers, or specialised subcontractors).</p>
+    <p>We take reasonable steps to store your information securely, protecting it from unauthorised access, loss, or misuse.</p>
+
+    <h2>Your Rights</h2>
+    <p>You have the right to request access to the personal information we hold about you, or to ask us to correct or delete it. If you have any privacy-related questions, please contact us directly.</p>
+  </div>
+</section>
+
+<div class="modal-overlay" id="quoteModal">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <h3>Request a quote</h3>
+    <p class="modal-box-subtitle">Fill in the form below and we'll get back to you as soon as possible.</p>
+    <form onsubmit="return handleSubmit(event)" action="https://formspree.io/f/mojgbryg" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="modal-name">Name</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-suburb">Suburb</label>
+        <input type="text" id="modal-suburb" name="suburb" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-phone">Phone number</label>
+        <input type="tel" id="modal-phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">Email address</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-message">Tell us about your space</label>
+        <textarea id="modal-message" name="message" rows="4"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="modal-attachments">Upload photos, plans, or inspiration (optional)</label>
+        <input type="file" id="modal-attachments" name="attachments" multiple accept="image/*,.pdf,.doc,.docx">
+      </div>
+      <button type="submit" class="form-submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/images/webster/logo-badge.png" alt="Webster Building" class="footer-brand-logo">
+        <p>Quality carpentry, fireplace installation, flooring, fencing, decks and pergolas for homeowners across Shellharbour and the Illawarra.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/websterbuilding/" class="icon-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+          </a>
+          <a href="https://www.facebook.com/p/Webster-Building-61558741212072/" class="icon-link" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M15 8.5h-1.8c-1 0-1.7.7-1.7 1.7V12H9v2.5h2.5V21h2.6v-6.5h2.1l.4-2.5h-2.5v-1.4c0-.4.3-.6.6-.6H15V8.5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="footer-col" aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/fireplaces-mantels/">Fireplaces</a></li>
+          <li><a href="/services/flooring/">Flooring</a></li>
+          <li><a href="/services/decks-pergolas/">Decks &amp; Pergolas</a></li>
+          <li><a href="#" class="enquire-link" data-modal="quoteModal">Fencing</a></li>
+          <li><a href="/services/carpentry/">Residential Carpentry &amp; Repairs</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about-us/">About</a></li>
+          <li><a href="/faqs/">FAQs</a></li>
+          <li><a href="/resources/">Resources</a></li>
+          <li><a href="/contact-us/">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <address>
+          <a href="tel:0411357189">0411 357 189</a>
+          <a href="mailto:hello@websterbuilding.com.au">hello@websterbuilding.com.au</a>
+          <span>Servicing Shellharbour, Kiama, Wollongong &amp; the Illawarra</span>
+        </address>
+        <a href="#" class="btn-cta" data-modal="quoteModal">Let's Talk</a>
+      </div>
+    </div>
+    <div class="footer-row">
+      <div class="footer-legal">
+        <span>&copy; Webster Building 2026</span>
+        <span class="footer-sep">|</span>
+        <span>Licence No.: 386548C</span>
+        <span class="footer-sep">|</span>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <span class="footer-sep">|</span>
+        <a href="/terms-conditions/">T&amp;Cs</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const submitBtn = form.querySelector('.form-submit');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.reset();
+        window.location.href = '/thank-you/';
+      } else {
+        alert("Something went wrong sending your message. Please call or email us directly.");
+      }
+    }).catch(() => {
+      alert("Something went wrong sending your message. Please call or email us directly.");
+    }).finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    });
+    return false;
+  }
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  const servicesDropdown = document.getElementById('servicesDropdown');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    servicesDropdown.classList.remove('open');
+  }));
+
+  const dropdownToggle = servicesDropdown.querySelector('.dropdown-toggle');
+  dropdownToggle.addEventListener('click', () => servicesDropdown.classList.toggle('open'));
+  document.addEventListener('click', (e) => {
+    if (!servicesDropdown.contains(e.target)) servicesDropdown.classList.remove('open');
+  });
+
+  function openModal(id, e) {
+    if (e) e.preventDefault();
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-modal]').forEach(el => {
+    el.addEventListener('click', (e) => openModal(el.getAttribute('data-modal'), e));
+  });
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(overlay); });
+    const closeBtn = overlay.querySelector('.modal-close');
+    if (closeBtn) closeBtn.addEventListener('click', () => closeModal(overlay));
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m));
+  });
+</script>
+
+</body>
+</html>

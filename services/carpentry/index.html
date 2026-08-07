@@ -1,0 +1,621 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Residential Carpentry &amp; Repairs | Webster Building</title>
+<meta name="description" content="Structural framing, internal fix-outs, cladding repairs, and emergency timber works across Shellharbour and the Illawarra. No job too small.">
+<link rel="icon" type="image/png" href="/images/webster/logo-badge.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","serviceType":"Residential Carpentry & Repairs","provider":{"@id":"https://websterbuilding.com.au/#organization"},"areaServed":{"@type":"AdministrativeArea","name":"Illawarra, NSW"},"description":"Structural framing, internal fix-outs, cladding repairs, and emergency timber works across Shellharbour and the Illawarra."}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
+<style>
+  :root {
+    --black: #000000;
+    --cream: #f4f1ea;
+    --cream-2: #efece3;
+    --white: #ffffff;
+    --off-white: #f8f9fc;
+    --border: #e4e0d5;
+    --text-dark: #1a1812;
+    --text-mid: #4a4739;
+    --gold: #f4c430;
+    --radius: 24px;
+    --radius-sm: 14px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Inter',sans-serif; color:var(--text-dark); background:var(--white); overflow-x:hidden; line-height:1.6; }
+  h1,h2,h3,h4 { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; line-height:1.15; font-weight:300; letter-spacing:-0.3px; }
+  img { max-width:100%; display:block; }
+  a { color:inherit; }
+  .wrap { max-width:1240px; margin:0 auto; padding:0 24px; }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+  .reveal-1.visible { transition-delay:0.08s; }
+  .reveal-2.visible { transition-delay:0.16s; }
+  .reveal-3.visible { transition-delay:0.24s; }
+
+  /* HEADER */
+  header { position:fixed; top:25px; left:25px; right:25px; z-index:300; background:transparent; opacity:1; transition:background-color 0.3s ease, box-shadow 0.3s ease, top 0.3s ease, left 0.3s ease, right 0.3s ease; }
+  header.scrolled { top:0; left:0; right:0; background:var(--white); box-shadow:0 4px 20px rgba(0,0,0,0.08); }
+  .nav-inner { padding:24px; display:flex; align-items:center; justify-content:space-between; gap:24px; transition:padding 0.3s ease; }
+  @media (max-width:640px) { .nav-inner { padding:16px; } }
+  header.scrolled .nav-inner { padding:10px 24px; }
+  .logo { display:flex; align-items:center; text-decoration:none; color:var(--text-dark); }
+  .logo img { height:120px; width:auto; flex-shrink:0; transition:height 0.3s ease; }
+  @media (max-width:640px) { .logo img { height:84px; } }
+  header.scrolled .logo img { height:52px; }
+  .footer-logo { height:98px; width:auto; margin:0 auto; display:block; }
+  .nav-links { display:flex; align-items:center; gap:36px; list-style:none; }
+  @media (min-width:901px) { .nav-links, .nav-right { margin-top:-25px; } header.scrolled .nav-links, header.scrolled .nav-right { margin-top:0; } }
+  .nav-links a { text-decoration:none; color:var(--white); font-size:14px; font-weight:400; letter-spacing:0.5px; text-transform:uppercase; padding:8px 14px; border-radius:100px; transition:background-color 0.2s, color 0.2s; }
+  .nav-links a:hover { background:rgba(255,255,255,0.2); color:var(--white); }
+  header.scrolled .nav-links a { color:var(--text-dark); }
+  header.scrolled .nav-links a:hover { background:var(--cream); color:var(--text-dark); }
+
+  .nav-dropdown { position:relative; }
+  .dropdown-toggle { display:flex; align-items:center; gap:7px; background:none; border:1px solid rgba(255,255,255,0.55); color:var(--white); font-family:'Inter',sans-serif; font-size:14px; font-weight:400; letter-spacing:0.5px; text-transform:uppercase; padding:8px 14px; border-radius:100px; cursor:pointer; transition:background-color 0.2s, border-color 0.2s, color 0.2s; }
+  .dropdown-toggle:hover { background:rgba(255,255,255,0.18); }
+  header.scrolled .dropdown-toggle { color:var(--text-dark); border-color:var(--border); }
+  header.scrolled .dropdown-toggle:hover { background:var(--cream); }
+  .dropdown-chevron { width:7px; height:7px; border-right:1.6px solid currentColor; border-bottom:1.6px solid currentColor; transform:rotate(45deg); margin-top:-4px; transition:transform 0.2s; flex-shrink:0; }
+  .nav-dropdown:hover .dropdown-chevron, .nav-dropdown.open .dropdown-chevron { transform:rotate(-135deg); margin-top:2px; }
+  .dropdown-menu { list-style:none; }
+  .dropdown-menu a { text-decoration:none; }
+  .nav-dropdown .dropdown-menu a { color:var(--text-dark); background:none; }
+  .nav-dropdown .dropdown-menu a:hover { color:var(--text-dark); background:var(--cream); }
+  @media (min-width:901px) {
+    .nav-dropdown:hover .dropdown-toggle, .nav-dropdown.open .dropdown-toggle { background:rgba(255,255,255,0.25); border-color:var(--white); }
+    header.scrolled .nav-dropdown:hover .dropdown-toggle, header.scrolled .nav-dropdown.open .dropdown-toggle { background:var(--cream); border-color:var(--text-dark); }
+    .nav-dropdown::after { content:''; position:absolute; left:0; right:0; top:100%; height:14px; }
+    .dropdown-menu { position:absolute; top:calc(100% + 14px); left:0; background:var(--white); border-radius:18px; box-shadow:0 20px 48px rgba(0,0,0,0.16); border:1px solid var(--border); padding:10px; min-width:230px; display:flex; flex-direction:column; gap:2px; z-index:10; opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; pointer-events:none; }
+    .nav-dropdown:hover .dropdown-menu, .nav-dropdown.open .dropdown-menu { opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto; }
+    .dropdown-menu a { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 16px; border-radius:12px; font-size:14.5px; font-weight:500; text-transform:none; letter-spacing:0; color:var(--text-dark); }
+    .dropdown-menu a::after { content:'\2192'; opacity:0; transform:translateX(-4px); transition:opacity 0.2s, transform 0.2s; }
+    .dropdown-menu a.enquire-link::after { content:'Enquire \2192'; font-size:11.5px; letter-spacing:0.5px; text-transform:uppercase; font-weight:600; color:#a3a3a3; }
+    .dropdown-menu a:hover::after { opacity:1; transform:translateX(0); }
+  }
+  .nav-right { display:flex; align-items:center; gap:22px; }
+  .icon-link { width:22px; height:22px; display:flex; align-items:center; justify-content:center; color:var(--white); }
+  .icon-link svg { width:22px; height:22px; }
+  header.scrolled .icon-link { color:var(--text-dark); }
+  .btn-cta { background:var(--black); color:var(--white); padding:13px 26px; border-radius:100px; font-weight:600; font-size:14px; text-decoration:none; text-transform:uppercase; letter-spacing:0.5px; white-space:nowrap; transition:opacity 0.2s, transform 0.2s; display:inline-block; border:none; cursor:pointer; }
+  .btn-cta:hover { opacity:0.82; transform:translateY(-2px); }
+  .nav-right .btn-cta { background:var(--cream); color:var(--text-dark); }
+  .nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:4px; color:var(--white); }
+  .nav-toggle svg { width:26px; height:26px; }
+  header.scrolled .nav-toggle { color:var(--text-dark); }
+
+  @media (max-width:900px) {
+    .nav-links { position:fixed; top:113px; left:0; right:0; background:var(--white); flex-direction:column; align-items:flex-start; gap:0; padding:8px 24px 20px; border-bottom:1px solid var(--border); transform:translateY(-12px); opacity:0; pointer-events:none; transition:all 0.25s; }
+    .nav-links.open { transform:translateY(0); opacity:1; pointer-events:auto; }
+    .nav-links li { width:100%; }
+    .nav-links a { display:block; padding:14px 0; border-bottom:1px solid var(--border); width:100%; color:var(--text-dark); }
+    .nav-right .btn-cta { padding:11px 20px; font-size:13px; }
+    .nav-toggle { display:block; }
+    .icon-link.desktop-only { display:none; }
+    .dropdown-toggle { width:100%; justify-content:space-between; padding:14px 0; border-bottom:1px solid var(--border); border-radius:0; border-left:none; border-right:none; border-top:none; color:var(--text-dark); }
+    .dropdown-toggle:hover { background:none; }
+    .dropdown-menu { padding-left:16px; max-height:0; overflow:hidden; transition:max-height 0.25s ease; }
+    .nav-dropdown.open .dropdown-menu { max-height:400px; }
+    .dropdown-menu a { border-bottom:1px solid var(--border); color:var(--text-dark); }
+  }
+
+  /* HERO */
+  .hero-section { padding:25px; }
+  .hero-media { position:relative; border-radius:var(--radius); overflow:hidden; min-height:480px; display:flex; align-items:flex-end; justify-content:center; }
+  .hero-media img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; transform-origin:center; animation:heroZoom 20s ease-in-out infinite alternate; }
+  @keyframes heroZoom { from{ transform:scale(1); } to{ transform:scale(1.07); } }
+  .hero-media::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.4) 100%); z-index:1; }
+  .hero-content { position:relative; z-index:2; padding:48px 48px 90px; color:var(--white); max-width:980px; text-align:center; }
+  @media (max-width:640px) { .hero-content { padding:28px 24px 60px; } }
+  .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.18); backdrop-filter:blur(6px); border-radius:100px; padding:8px 18px; margin-bottom:22px; font-size:14px; font-weight:600; }
+  .hero-content h1 { font-size:clamp(34px,5.2vw,58px); font-weight:300; margin-bottom:20px; letter-spacing:-1px; white-space:nowrap; }
+  @media (max-width:900px) { .hero-content h1 { white-space:normal; } }
+  .hero-content p { font-size:clamp(15px,1.6vw,18px); max-width:660px; font-weight:400; margin:0 auto; }
+
+  /* SECTION HEADING */
+  .section-heading { text-align:center; padding:88px 24px 0; }
+  .section-heading h2 { font-size:clamp(28px,3.4vw,40px); margin-bottom:14px; }
+  .section-heading p { color:var(--text-mid); font-size:16.5px; max-width:600px; margin:0 auto; }
+
+  /* CENTERED INTRO (no image) */
+  .centered-block { background:var(--white); padding:96px 24px; text-align:center; }
+  .centered-inner { max-width:760px; margin:0 auto; }
+  .centered-inner h2 { font-size:clamp(28px,3.4vw,40px); margin-bottom:28px; }
+  .centered-inner p { color:var(--text-mid); font-size:16.5px; margin-bottom:22px; }
+  .centered-inner .btn-cta { margin-top:8px; }
+
+  /* WHY CHOOSE GRID */
+  .why-section { padding:140px 24px 88px; background:var(--white); }
+  .why-grid { max-width:1240px; margin:52px auto 0; display:grid; grid-template-columns:repeat(3,1fr); gap:28px; text-align:left; }
+  @media (max-width:860px) { .why-grid { grid-template-columns:1fr; } }
+  .why-card { background:var(--cream); border-radius:var(--radius); padding:32px; transition:transform 0.3s, box-shadow 0.3s; }
+  .why-card:hover { transform:translateY(-6px); box-shadow:0 16px 32px rgba(0,0,0,0.08); }
+  .why-card h3 { font-size:19px; font-weight:600; margin-bottom:10px; }
+  .why-card p { color:var(--text-mid); font-size:15px; }
+
+  /* SERVICE BLOCKS */
+  .service-block { padding:88px 24px; }
+  .service-block.tint { background:var(--cream); }
+  .service-grid { max-width:1240px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+  @media (max-width:860px) { .service-grid { grid-template-columns:1fr; gap:36px; } }
+  .service-grid.reverse .service-media { order:2; }
+  .service-grid.reverse .service-text { order:1; }
+  @media (max-width:860px) { .service-grid.reverse .service-media, .service-grid.reverse .service-text { order:initial; } }
+  .service-media { border-radius:var(--radius); overflow:hidden; }
+  .service-media img { border-radius:var(--radius); width:100%; height:480px; object-fit:cover; transition:transform 0.5s ease; }
+  .service-media:hover img { transform:scale(1.06); }
+  @media (max-width:860px) { .service-media img { height:320px; } }
+  .service-text h2 { font-size:clamp(28px,3.4vw,40px); margin-bottom:18px; }
+  .service-badge { display:inline-flex; align-items:center; gap:8px; background:var(--cream-2); border-radius:100px; padding:8px 18px; margin-bottom:20px; font-size:14px; font-weight:600; }
+  .service-block.tint .service-badge { background:var(--white); }
+  .service-text p { color:var(--text-mid); font-size:16px; margin-bottom:24px; }
+  .learn-more { font-size:13px; font-weight:700; text-decoration:none; text-transform:uppercase; letter-spacing:1px; color:var(--text-dark); display:inline-flex; align-items:center; gap:6px; padding:0; border:none; }
+  .learn-more .arrow { display:inline-block; transition:transform 0.2s; }
+  .learn-more:hover .arrow { transform:translateX(5px); }
+
+  /* DETAIL LIST (label + description bullets) */
+  .detail-list { list-style:none; display:grid; gap:16px; margin:4px 0 24px; }
+  .detail-list li { display:flex; align-items:flex-start; gap:12px; color:var(--text-mid); font-size:15.5px; }
+  .detail-list li svg { width:22px; height:22px; flex-shrink:0; margin-top:2px; color:var(--text-dark); transition:transform 0.2s; }
+  .detail-list li:hover svg { animation:iconBounce 0.5s ease; }
+  @keyframes iconBounce { 0%,100%{ transform:translateY(0); } 30%{ transform:translateY(-5px); } 55%{ transform:translateY(0); } 75%{ transform:translateY(-2px); } }
+  .detail-list li strong { color:var(--text-dark); }
+
+  /* MID CTA */
+  .mid-cta-wrap { padding:16px 24px 0; }
+  .mid-cta { background:var(--cream); border-radius:var(--radius); padding:44px; text-align:center; max-width:1192px; margin:0 auto; }
+  .mid-cta h2 { font-size:clamp(26px,3vw,36px); margin-bottom:14px; }
+  .mid-cta p { color:var(--text-mid); font-size:16.5px; max-width:560px; margin:0 auto 24px; }
+  @media (max-width:640px) { .mid-cta { padding:32px 24px; } }
+
+  /* FAQ */
+  .faq-section { background:var(--cream); padding:96px 24px; }
+  .faq-inner { max-width:1240px; margin:0 auto; }
+  .faq-inner h2 { font-size:clamp(28px,3.4vw,40px); margin-bottom:36px; }
+  .faq-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px 20px; align-items:start; }
+  @media (max-width:760px) { .faq-grid { grid-template-columns:1fr; } }
+  .faq-item { background:var(--off-white); border-radius:16px; overflow:hidden; transition:box-shadow 0.25s; }
+  .faq-item:hover { box-shadow:0 8px 24px rgba(0,0,0,0.06); }
+  .faq-question { width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:22px 28px; background:none; border:none; text-align:left; font-family:'Inter',sans-serif; font-size:16.5px; font-weight:500; cursor:pointer; color:var(--text-dark); }
+  .faq-icon { width:22px; height:22px; flex-shrink:0; position:relative; }
+  .faq-icon::before, .faq-icon::after { content:''; position:absolute; background:var(--text-dark); top:50%; left:50%; transform:translate(-50%,-50%); transition:transform 0.25s; }
+  .faq-icon::before { width:16px; height:2px; }
+  .faq-icon::after { width:2px; height:16px; }
+  .faq-item.open .faq-icon::after { transform:translate(-50%,-50%) rotate(90deg); opacity:0; }
+  .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.3s ease; }
+  .faq-answer-inner { padding:0 28px 24px; color:var(--text-mid); font-size:15.5px; }
+  .faq-item.open .faq-answer { max-height:400px; }
+
+  /* CONTACT */
+  .contact-section { padding:64px 24px 24px; background:var(--black); }
+  .contact-card { max-width:680px; margin:0 auto; background:#ffffff; border-radius:var(--radius); padding:64px; text-align:center; }
+  @media (max-width:860px) { .contact-card { padding:36px 26px; } }
+  .contact-card h2 { font-size:clamp(30px,4vw,44px); margin-bottom:32px; }
+  .contact-row { display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:16px; font-size:17px; font-weight:500; }
+  .contact-row svg { width:22px; height:22px; flex-shrink:0; }
+  .contact-row a { text-decoration:none; }
+  .contact-cta-btn { margin-top:20px; padding:17px 44px; font-size:15px; }
+  .form-group { margin-bottom:22px; }
+  .form-group label { display:block; font-size:14.5px; font-weight:500; margin-bottom:8px; }
+  .form-group input, .form-group textarea { width:100%; border:1px solid var(--border); background:var(--white); border-radius:10px; padding:13px 16px; font-family:'Inter',sans-serif; font-size:15px; resize:vertical; }
+  .form-group input:focus, .form-group textarea:focus { outline:none; border-color:var(--text-dark); }
+  .form-group input[type="file"] { border:1px dashed var(--border); padding:12px 16px; cursor:pointer; font-size:13.5px; color:var(--text-mid); }
+  .form-submit { width:100%; background:var(--black); color:var(--white); border:none; border-radius:100px; padding:16px; font-size:16px; font-weight:600; cursor:pointer; font-family:'Inter',sans-serif; transition:opacity 0.2s; }
+  .form-submit:hover { opacity:0.85; }
+
+  /* MODAL */
+  .modal-overlay { position:fixed; inset:0; background:rgba(20,18,14,0.6); z-index:500; display:flex; align-items:center; justify-content:center; padding:24px; opacity:0; pointer-events:none; transition:opacity 0.25s ease; }
+  .modal-overlay.open { opacity:1; pointer-events:auto; }
+  .modal-box { background:var(--white); border-radius:var(--radius); padding:48px; max-width:520px; width:100%; max-height:88vh; overflow-y:auto; position:relative; transform:translateY(16px) scale(0.98); transition:transform 0.25s ease; }
+  @media (max-width:600px) { .modal-box { padding:32px 24px; } }
+  .modal-overlay.open .modal-box { transform:translateY(0) scale(1); }
+  .modal-close { position:absolute; top:18px; right:18px; width:36px; height:36px; display:flex; align-items:center; justify-content:center; background:var(--cream); border:none; border-radius:50%; font-size:20px; line-height:1; cursor:pointer; color:var(--text-dark); transition:background 0.2s; }
+  .modal-close:hover { background:var(--cream-2); }
+  .modal-box h3 { font-size:26px; margin-bottom:10px; }
+  .modal-box-subtitle { color:var(--text-mid); font-size:15px; margin-bottom:24px; }
+
+  /* FOOTER */
+  footer { background:var(--black); color:var(--white); padding:80px 24px 32px; }
+  .footer-inner { max-width:1240px; margin:0 auto; }
+  .footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:48px; padding-bottom:52px; margin-bottom:28px; border-bottom:1px solid rgba(255,255,255,0.12); }
+  @media (max-width:860px) { .footer-grid { grid-template-columns:1fr 1fr; gap:40px 24px; } }
+  @media (max-width:520px) { .footer-grid { grid-template-columns:1fr; gap:36px; } }
+  .footer-brand-logo { height:120px; width:auto; margin-bottom:18px; }
+  .footer-brand p { color:rgba(255,255,255,0.7); font-size:14.5px; max-width:320px; margin-bottom:22px; }
+  .footer-socials { display:flex; align-items:center; gap:18px; margin-bottom:22px; }
+  .footer-socials .icon-link { color:var(--white); }
+  .footer-col h4 { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:rgba(255,255,255,0.5); margin-bottom:18px; }
+  .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:12px; }
+  .footer-col a { text-decoration:none; color:rgba(255,255,255,0.85); font-size:14.5px; transition:color 0.2s; }
+  .footer-col a:hover { color:var(--white); }
+  .footer-col address { font-style:normal; display:flex; flex-direction:column; gap:12px; margin-bottom:20px; }
+  .footer-col address span { color:rgba(255,255,255,0.7); font-size:14px; display:block; }
+  footer .btn-cta, footer .btn-cta:hover { background:var(--cream); color:var(--text-dark); }
+  .footer-row { width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13.5px; }
+  .footer-legal { display:flex; align-items:center; gap:10px; flex-wrap:wrap; color:var(--white); opacity:0.85; }
+  .footer-legal a { text-decoration:none; color:var(--white); transition:opacity 0.2s; }
+  .footer-legal a:hover { opacity:0.7; }
+  .footer-sep { opacity:0.4; }
+  .footer-credit { text-decoration:none; color:var(--white); opacity:0.85; transition:opacity 0.2s; }
+  .footer-credit:hover { opacity:1; }
+  @media (max-width:600px) {
+    .footer-row { flex-direction:column; align-items:center; gap:12px; text-align:center; }
+    .footer-legal { flex-direction:column; gap:8px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="/images/webster/logo-badge.png" alt="Webster Building">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li class="nav-dropdown" id="servicesDropdown">
+        <button type="button" class="dropdown-toggle">Our Services <span class="dropdown-chevron"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="/services/fireplaces-mantels/">Fireplaces</a></li>
+          <li><a href="/services/flooring/">Flooring</a></li>
+          <li><a href="/services/decks-pergolas/">Decks &amp; Pergolas</a></li>
+          <li><a href="#" class="enquire-link" data-modal="quoteModal">Fencing</a></li>
+          <li><a href="/services/carpentry/">Residential Carpentry &amp; Repairs</a></li>
+        </ul>
+      </li>
+      <li><a href="/faqs/">FAQs</a></li>
+      <li><a href="/about-us/">About</a></li>
+      <li><a href="/resources/">Resources</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://www.instagram.com/websterbuilding/" class="icon-link desktop-only" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+      </a>
+      <a href="https://www.facebook.com/p/Webster-Building-61558741212072/" class="icon-link desktop-only" aria-label="Facebook" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M15 8.5h-1.8c-1 0-1.7.7-1.7 1.7V12H9v2.5h2.5V21h2.6v-6.5h2.1l.4-2.5h-2.5v-1.4c0-.4.3-.6.6-.6H15V8.5z"/></svg>
+      </a>
+      <a href="#" class="btn-cta" data-modal="quoteModal">Let's Talk</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero-section">
+  <div class="hero-media">
+    <img src="/images/webster/gate.webp" alt="Custom timber gate and structural carpentry work">
+    <div class="hero-content">
+      <span class="hero-badge">Licensed &amp; Experienced</span>
+      <h1>Residential Carpentry &amp; Repairs.</h1>
+      <p>Structural framing, internal fix-outs, cladding repairs, and emergency timber works—delivered with the same trade-level precision we bring to every major build.</p>
+    </div>
+  </div>
+</section>
+
+<section class="centered-block">
+  <div class="centered-inner reveal">
+    <h2>No job too small.</h2>
+    <p>Not every project fits neatly into a major deck build or full floor installation—and that's where our residential carpentry services step in. Whether you need structural framing for a minor room reconfiguration, precision timber fix-outs, or emergency timber repairs, Webster Building delivers the exact same trade-level precision and structural integrity to smaller jobs as we do to complete outdoor builds.</p>
+    <p>From restoring weathered timber elements to internal architectural detailing, we make sure your home's structural and decorative woodwork is built clean, square, and built to last.</p>
+    <a href="#" class="btn-cta" data-modal="quoteModal">Let's Talk</a>
+  </div>
+</section>
+
+<section class="service-block tint">
+  <div class="service-grid">
+    <div class="service-media reveal">
+      <img src="/images/webster/doors.webp" alt="Timber door and joinery detailing">
+    </div>
+    <div class="service-text reveal reveal-1">
+      <h2>Structural &amp; framing work</h2>
+      <ul class="detail-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.6 2.6L16 9.3"/></svg><span><strong>Timber Wall &amp; Floor Framing:</strong> Precision-installed wall studs, floor joists, and structural sub-framing for room modifications or small home extensions.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.6 2.6L16 9.3"/></svg><span><strong>Wall Removal &amp; Load Support:</strong> Skilled structural timber adjustments and beam installations to open up living spaces safely.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.6 2.6L16 9.3"/></svg><span><strong>Carports &amp; Verandahs:</strong> Heavy-duty timber framing constructed to withstand the elements and match your home's design.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="service-block">
+  <div class="service-grid reverse">
+    <div class="service-media reveal">
+      <img src="/images/webster/track-penrose.webp" alt="Barn door track and internal joinery detailing">
+    </div>
+    <div class="service-text reveal reveal-1">
+      <h2>Internal fix-outs &amp; architectural detailing</h2>
+      <ul class="detail-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.6 2.6L16 9.3"/></svg><span><strong>Doors &amp; Windows:</strong> Professional door hanging (internal, external, and sliding barn doors), timber door frame repairs, window surround replacements, and hardware fitting.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.6 2.6L16 9.3"/></svg><span><strong>Skirting Boards &amp; Architraves:</strong> Clean, seamless installation and replacement of skirtings, architraves, picture rails, and decorative wall paneling (such as VJ lining boards and dado rails).</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.6 2.6L16 9.3"/></svg><span><strong>Stairs, Handrails &amp; Balustrades:</strong> Internal timber staircase modifications, tread replacements, handrails, and safety balustrade installations.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="service-block tint">
+  <div class="service-grid">
+    <div class="service-media reveal">
+      <img src="/images/webster/gate2.webp" alt="Exterior cladding and timber gate repairs">
+    </div>
+    <div class="service-text reveal reveal-1">
+      <h2>Cladding, repairs &amp; emergency works</h2>
+      <ul class="detail-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.6 2.6L16 9.3"/></svg><span><strong>Exterior Cladding &amp; Weatherboards:</strong> Installation and repairs for timber weatherboards, eaves, and fascia board replacements.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.6 2.6L16 9.3"/></svg><span><strong>Make-Safes &amp; Structural Repairs:</strong> Fast-response emergency make-safes, structural propping, and securing timber structures following storm damage, decay, or impact.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.6 2.6L16 9.3"/></svg><span><strong>Termite &amp; Rot Restoration:</strong> Removing and replacing rotted or termite-damaged sub-floor timbers, studs, joists, and structural fascia.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="section-heading" style="padding-top:0;">
+    <h2>Why choose Webster Building for your carpentry projects?</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <h3>Licensed &amp; experienced tradesmen</h3>
+      <p>You deal directly with a qualified carpenter who understands NSW building codes and structural standards.</p>
+    </div>
+    <div class="why-card reveal reveal-1">
+      <h3>No job too small</h3>
+      <p>We treat small repair jobs and custom fix-outs with the same level of care and detail as complete residential builds.</p>
+    </div>
+    <div class="why-card reveal reveal-2">
+      <h3>Clean &amp; professional site management</h3>
+      <p>We respect your property—keeping job sites safe, tidy, and clean from start to finish.</p>
+    </div>
+  </div>
+</section>
+
+<div class="mid-cta-wrap">
+  <div class="mid-cta reveal">
+    <h2>Need a qualified carpenter for your next project?</h2>
+    <p>From small fixes to structural framing modifications, get in touch with Webster Building today for a straightforward quote.</p>
+    <a href="#" class="btn-cta" data-modal="quoteModal">Let's Talk</a>
+  </div>
+</div>
+
+<section class="faq-section" style="margin-top:88px;">
+  <div class="faq-inner">
+    <h2>Frequently asked questions about our carpentry services.</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What kind of small carpentry jobs do you handle?<span class="faq-icon"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">We handle a wide range of smaller residential jobs, including door hanging and repairs, replacing skirting boards and architraves, repairing damaged weatherboards, timber framing modifications, installing decorative wall paneling (like VJ boards), and performing structural repairs for rot or termite damage.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Can you fix timber rot or termite-damaged timber?<span class="faq-icon"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Absolutely. We inspect the affected areas, safely prop or support any structural load, cut out the compromised timber, and replace it with treated, durable structural timber (such as H3 or H4 treated pine) to ensure long-term stability and code compliance.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Do I need council approval for small framing or repair jobs?<span class="faq-icon"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Most general carpentry repairs, internal door replacements, skirtings, cladding repairs, and minor non-structural wall modifications fall under Exempt Development in NSW, meaning council approval is generally not required. However, for major load-bearing wall removals or structural additions, we can advise you on whether structural engineering sign-off is needed.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">How do you price custom carpentry and repair work?<span class="faq-icon"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">For defined projects (like installing skirtings for a whole house or replacing external cladding), we provide a clear, fixed-price quote. For smaller, unpredictable repair tasks, we offer transparent trade rates based on time and materials so you only pay for what your job actually requires.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">How soon can you start on a repair or fix-out job?<span class="faq-icon"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Turnaround times depend on our current schedule and the scale of the job, but because small repair work and fix-outs require less lead time than major outdoor builds, we can often fit smaller projects and urgent repairs in between larger structural schedules. Reach out directly to discuss current availability.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Can you install custom timber features like VJ panelling or wainscoting?<span class="faq-icon"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. Decorative wall panelling—including VJ feature walls, dado rails, and traditional wainscoting—is a great way to add character to living areas, hallways, and bedrooms. We ensure all panelling is precision-cut, level, and seamlessly integrated with your existing skirtings and trims.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="contact-card reveal">
+    <h2>Get a free quote and turn your vision into a reality.</h2>
+    <div class="contact-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5c0 8.3 6.7 15 15 15l3-4-6-3-2 2c-2.5-1.2-4-2.7-5.2-5.2l2-2-3-6z"/></svg>
+      <a href="tel:0411357189">Call or text: 0411 357 189</a>
+    </div>
+    <div class="contact-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      <a href="mailto:hello@websterbuilding.com.au">hello@websterbuilding.com.au</a>
+    </div>
+    <a href="#" class="btn-cta contact-cta-btn" data-modal="quoteModal">Let's Talk</a>
+  </div>
+</section>
+
+<div class="modal-overlay" id="quoteModal">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <h3>Request a quote</h3>
+    <p class="modal-box-subtitle">Fill in the form below and we'll get back to you as soon as possible.</p>
+    <form onsubmit="return handleSubmit(event)" action="https://formspree.io/f/mojgbryg" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="modal-name">Name</label>
+        <input type="text" id="modal-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-suburb">Suburb</label>
+        <input type="text" id="modal-suburb" name="suburb" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-phone">Phone number</label>
+        <input type="tel" id="modal-phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-email">Email address</label>
+        <input type="email" id="modal-email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="modal-message">Tell us about your space</label>
+        <textarea id="modal-message" name="message" rows="4"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="modal-attachments">Upload photos, plans, or inspiration (optional)</label>
+        <input type="file" id="modal-attachments" name="attachments" multiple accept="image/*,.pdf,.doc,.docx">
+      </div>
+      <button type="submit" class="form-submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/images/webster/logo-badge.png" alt="Webster Building" class="footer-brand-logo">
+        <p>Quality carpentry, fireplace installation, flooring, fencing, decks and pergolas for homeowners across Shellharbour and the Illawarra.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/websterbuilding/" class="icon-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+          </a>
+          <a href="https://www.facebook.com/p/Webster-Building-61558741212072/" class="icon-link" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M15 8.5h-1.8c-1 0-1.7.7-1.7 1.7V12H9v2.5h2.5V21h2.6v-6.5h2.1l.4-2.5h-2.5v-1.4c0-.4.3-.6.6-.6H15V8.5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="footer-col" aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/fireplaces-mantels/">Fireplaces</a></li>
+          <li><a href="/services/flooring/">Flooring</a></li>
+          <li><a href="/services/decks-pergolas/">Decks &amp; Pergolas</a></li>
+          <li><a href="#" class="enquire-link" data-modal="quoteModal">Fencing</a></li>
+          <li><a href="/services/carpentry/">Residential Carpentry &amp; Repairs</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about-us/">About</a></li>
+          <li><a href="/faqs/">FAQs</a></li>
+          <li><a href="/resources/">Resources</a></li>
+          <li><a href="/contact-us/">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <address>
+          <a href="tel:0411357189">0411 357 189</a>
+          <a href="mailto:hello@websterbuilding.com.au">hello@websterbuilding.com.au</a>
+          <span>Servicing Shellharbour, Kiama, Wollongong &amp; the Illawarra</span>
+        </address>
+        <a href="#" class="btn-cta" data-modal="quoteModal">Let's Talk</a>
+      </div>
+    </div>
+    <div class="footer-row">
+      <div class="footer-legal">
+        <span>&copy; Webster Building 2026</span>
+        <span class="footer-sep">|</span>
+        <span>Licence No.: 386548C</span>
+        <span class="footer-sep">|</span>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <span class="footer-sep">|</span>
+        <a href="/terms-conditions/">T&amp;Cs</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const submitBtn = form.querySelector('.form-submit');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.reset();
+        window.location.href = '/thank-you/';
+      } else {
+        alert("Something went wrong sending your message. Please call or email us directly.");
+      }
+    }).catch(() => {
+      alert("Something went wrong sending your message. Please call or email us directly.");
+    }).finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    });
+    return false;
+  }
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  const servicesDropdown = document.getElementById('servicesDropdown');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    servicesDropdown.classList.remove('open');
+  }));
+
+  const dropdownToggle = servicesDropdown.querySelector('.dropdown-toggle');
+  dropdownToggle.addEventListener('click', () => servicesDropdown.classList.toggle('open'));
+  document.addEventListener('click', (e) => {
+    if (!servicesDropdown.contains(e.target)) servicesDropdown.classList.remove('open');
+  });
+
+  const header = document.querySelector('header');
+  function updateHeaderState() {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+  }
+  window.addEventListener('scroll', updateHeaderState, { passive: true });
+  updateHeaderState();
+
+  function openModal(id, e) {
+    if (e) e.preventDefault();
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-modal]').forEach(el => {
+    el.addEventListener('click', (e) => openModal(el.getAttribute('data-modal'), e));
+  });
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(overlay); });
+    const closeBtn = overlay.querySelector('.modal-close');
+    if (closeBtn) closeBtn.addEventListener('click', () => closeModal(overlay));
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m));
+  });
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
