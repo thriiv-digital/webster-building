@@ -185,6 +185,7 @@
   .form-group input, .form-group textarea { width:100%; border:1px solid var(--border); background:var(--white); border-radius:10px; padding:13px 16px; font-family:'Inter',sans-serif; font-size:15px; resize:vertical; }
   .form-group input:focus, .form-group textarea:focus { outline:none; border-color:var(--text-dark); }
   .form-group input[type="file"] { border:1px dashed var(--border); padding:12px 16px; cursor:pointer; font-size:13.5px; color:var(--text-mid); }
+  .form-hint { font-size:13px; color:var(--text-mid); margin-top:6px; }
   .form-submit { width:100%; background:var(--black); color:var(--white); border:none; border-radius:100px; padding:16px; font-size:16px; font-weight:600; cursor:pointer; font-family:'Inter',sans-serif; transition:opacity 0.2s; }
   .form-submit:hover { opacity:0.85; }
 
@@ -463,12 +464,27 @@
     nextField.value = window.location.origin + '/thank-you/';
     form.submit();
   }
+  const fileSelections = new WeakMap();
   document.querySelectorAll('input[type="file"][name="attachments"]').forEach(function(input) {
+    fileSelections.set(input, []);
     input.addEventListener('change', function() {
-      if (input.files.length > 3) {
-        const dt = new DataTransfer();
-        for (let i = 0; i < 3; i++) dt.items.add(input.files[i]);
-        input.files = dt.files;
+      const seen = new Set();
+      let combined = fileSelections.get(input).concat(Array.from(input.files)).filter(function(f) {
+        const key = f.name + f.size + f.lastModified;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+      let trimmed = false;
+      if (combined.length > 3) {
+        combined = combined.slice(0, 3);
+        trimmed = true;
+      }
+      const dt = new DataTransfer();
+      combined.forEach(function(f) { dt.items.add(f); });
+      input.files = dt.files;
+      fileSelections.set(input, combined);
+      if (trimmed) {
         alert('You can attach up to 3 files. The first 3 have been kept — email hello@websterbuilding.com.au to send more.');
       }
     });

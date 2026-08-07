@@ -843,12 +843,27 @@
     nextField.value = window.location.origin + '/thank-you/';
     form.submit();
   }
+  const fileSelections = new WeakMap();
   document.querySelectorAll('input[type="file"][name="attachments"]').forEach(function(input) {
+    fileSelections.set(input, []);
     input.addEventListener('change', function() {
-      if (input.files.length > 3) {
-        const dt = new DataTransfer();
-        for (let i = 0; i < 3; i++) dt.items.add(input.files[i]);
-        input.files = dt.files;
+      const seen = new Set();
+      let combined = fileSelections.get(input).concat(Array.from(input.files)).filter(function(f) {
+        const key = f.name + f.size + f.lastModified;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+      let trimmed = false;
+      if (combined.length > 3) {
+        combined = combined.slice(0, 3);
+        trimmed = true;
+      }
+      const dt = new DataTransfer();
+      combined.forEach(function(f) { dt.items.add(f); });
+      input.files = dt.files;
+      fileSelections.set(input, combined);
+      if (trimmed) {
         alert('You can attach up to 3 files. The first 3 have been kept — email hello@websterbuilding.com.au to send more.');
       }
     });
