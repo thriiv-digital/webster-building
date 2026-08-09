@@ -272,6 +272,7 @@
   .blog-card-body h3 { font-size:19px; font-weight:600; margin-bottom:10px; }
   .blog-card-body p { color:var(--text-mid); font-size:14.5px; margin-bottom:18px; }
   .blog-arrow { width:22px; height:22px; transition:transform 0.25s ease; }
+  .blog-section-cta { margin-top:44px; }
 
   /* FAQ */
   .faq-section { background:var(--cream); padding:96px 24px; }
@@ -307,6 +308,15 @@
   .form-group input, .form-group textarea { width:100%; border:1px solid var(--border); background:var(--white); border-radius:10px; padding:13px 16px; font-family:'Inter',sans-serif; font-size:15px; resize:vertical; }
   .form-group input:focus, .form-group textarea:focus { outline:none; border-color:var(--text-dark); }
   .form-group input[type="file"] { border:1px dashed var(--border); padding:12px 16px; cursor:pointer; font-size:13.5px; color:var(--text-mid); }
+  .file-input-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  .file-upload-btn { display:inline-block; width:auto; border:1px dashed var(--border); padding:12px 20px; cursor:pointer; font-size:13.5px; color:var(--text-mid); border-radius:10px; transition:border-color 0.2s, color 0.2s; }
+  .file-upload-btn:hover { border-color:var(--text-dark); color:var(--text-dark); }
+  .file-chip-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  .file-chip-list:empty { margin-top:0; }
+  .file-chip { display:inline-flex; align-items:center; gap:4px; background:var(--cream); border-radius:100px; padding:6px 6px 6px 14px; font-size:13px; color:var(--text-dark); max-width:100%; }
+  .file-chip span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:220px; }
+  .file-chip button { display:flex; align-items:center; justify-content:center; width:20px; height:20px; background:none; border:none; cursor:pointer; font-size:15px; line-height:1; color:var(--text-mid); border-radius:50%; flex-shrink:0; }
+  .file-chip button:hover { color:var(--white); background:var(--text-dark); }
   .form-hint { font-size:13px; color:var(--text-mid); margin-top:6px; }
   .form-submit { width:100%; background:var(--black); color:var(--white); border:none; border-radius:100px; padding:16px; font-size:16px; font-weight:600; cursor:pointer; font-family:'Inter',sans-serif; transition:opacity 0.2s; }
   .form-submit:hover { opacity:0.85; }
@@ -367,7 +377,7 @@
           <li><a href="/services/fireplaces-mantels/">Fireplaces</a></li>
           <li><a href="/services/flooring/">Flooring</a></li>
           <li><a href="/services/decks-pergolas/">Decks &amp; Pergolas</a></li>
-          <li><a href="/services/fencing/" class="enquire-link">Fencing</a></li>
+          <li><a href="#" class="enquire-link" data-modal="quoteModal">Fencing</a></li>
           <li><a href="/services/carpentry/">Residential Carpentry &amp; Repairs</a></li>
         </ul>
       </li>
@@ -512,7 +522,7 @@
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.6 2.6L16 9.3"/></svg> Horizontal slat, louvre &amp; decorative screening</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.6 2.6L16 9.3"/></svg> Fence repairs, storm damage fixes &amp; replacements</li>
     </ul>
-    <a href="/services/fencing/" class="learn-more">Learn more <span class="arrow">&#8594;</span></a>
+    <a href="#" class="learn-more" data-modal="quoteModal">Contact us <span class="arrow">&#8594;</span></a>
   </div>
 </section>
 
@@ -634,6 +644,7 @@
       </div>
     </a>
   </div>
+  <a href="/resources/" class="btn-cta blog-section-cta">View all resources</a>
 </section>
 
 <section class="faq-section" id="faq">
@@ -759,7 +770,9 @@
       </div>
       <div class="form-group">
         <label for="modal-attachments">Upload photos, plans, or inspiration (optional, max 3 files)</label>
-        <input type="file" id="modal-attachments" name="attachments" multiple accept="image/*,.pdf,.doc,.docx">
+        <input type="file" id="modal-attachments" name="attachments" multiple accept="image/*,.pdf,.doc,.docx" class="file-input-hidden">
+        <label for="modal-attachments" class="file-upload-btn">Choose files</label>
+        <div class="file-chip-list" id="modal-attachments-chips"></div>
         <p class="form-hint">Want to send more? Email <a href="mailto:hello@websterbuilding.com.au">hello@websterbuilding.com.au</a>.</p>
       </div>
       <button type="submit" class="form-submit">Submit</button>
@@ -788,7 +801,7 @@
           <li><a href="/services/fireplaces-mantels/">Fireplaces</a></li>
           <li><a href="/services/flooring/">Flooring</a></li>
           <li><a href="/services/decks-pergolas/">Decks &amp; Pergolas</a></li>
-          <li><a href="/services/fencing/" class="enquire-link">Fencing</a></li>
+          <li><a href="#" class="enquire-link" data-modal="quoteModal">Fencing</a></li>
           <li><a href="/services/carpentry/">Residential Carpentry &amp; Repairs</a></li>
         </ul>
       </nav>
@@ -873,6 +886,34 @@
   const fileSelections = new WeakMap();
   document.querySelectorAll('input[type="file"][name="attachments"]').forEach(function(input) {
     fileSelections.set(input, []);
+    const chipList = document.getElementById(input.id + '-chips');
+    function renderChips() {
+      if (!chipList) return;
+      chipList.innerHTML = '';
+      fileSelections.get(input).forEach(function(f, idx) {
+        const chip = document.createElement('span');
+        chip.className = 'file-chip';
+        const nameSpan = document.createElement('span');
+        nameSpan.textContent = f.name;
+        chip.appendChild(nameSpan);
+        const removeBtn = document.createElement('button');
+        removeBtn.type = 'button';
+        removeBtn.setAttribute('aria-label', 'Remove ' + f.name);
+        removeBtn.textContent = '×';
+        removeBtn.addEventListener('click', function() {
+          applyFiles(fileSelections.get(input).filter(function(_, i) { return i !== idx; }));
+        });
+        chip.appendChild(removeBtn);
+        chipList.appendChild(chip);
+      });
+    }
+    function applyFiles(files) {
+      const dt = new DataTransfer();
+      files.forEach(function(f) { dt.items.add(f); });
+      input.files = dt.files;
+      fileSelections.set(input, files);
+      renderChips();
+    }
     input.addEventListener('change', function() {
       const seen = new Set();
       let combined = fileSelections.get(input).concat(Array.from(input.files)).filter(function(f) {
@@ -886,14 +927,15 @@
         combined = combined.slice(0, 3);
         trimmed = true;
       }
-      const dt = new DataTransfer();
-      combined.forEach(function(f) { dt.items.add(f); });
-      input.files = dt.files;
-      fileSelections.set(input, combined);
+      applyFiles(combined);
       if (trimmed) {
         alert('You can attach up to 3 files. The first 3 have been kept — email hello@websterbuilding.com.au to send more.');
       }
     });
+    const ownerForm = input.closest('form');
+    if (ownerForm) {
+      ownerForm.addEventListener('reset', function() { applyFiles([]); });
+    }
   });
   const navToggle = document.getElementById('navToggle');
   const navToggleIcon = document.getElementById('navToggleIcon');
