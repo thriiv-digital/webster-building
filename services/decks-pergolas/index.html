@@ -12,7 +12,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 
 <style>
@@ -157,6 +157,9 @@
   .learn-more { font-size:13px; font-weight:700; text-decoration:none; text-transform:uppercase; letter-spacing:1px; color:var(--text-dark); display:inline-flex; align-items:center; gap:6px; padding:0; border:none; }
   .learn-more .arrow { display:inline-block; transition:transform 0.2s; }
   .process-step-cta { margin-top:16px; }
+  .process-step-highlight { position:relative; border:2px solid var(--text-dark); border-radius:26px 8px 26px 8px/8px 26px 8px 26px; }
+  .process-here-label { position:absolute; top:-32px; left:18px; font-family:'Caveat',cursive; font-size:21px; font-weight:600; color:var(--text-dark); white-space:nowrap; transform:rotate(-2deg); pointer-events:none; }
+  .process-here-label svg { position:absolute; left:2px; top:22px; width:44px; height:26px; overflow:visible; }
   .learn-more:hover .arrow { transform:translateX(5px); }
 
   /* SERVICE PILLS */
@@ -421,7 +424,10 @@
     <h2>Our 4-step deck &amp; pergola build process.</h2>
     <p>We keep things straightforward so you know exactly what to expect from initial trade estimate to final walkthrough.</p>
     <div class="process-grid">
-      <div class="process-step reveal">
+      <div class="process-step reveal process-step-highlight">
+        <span class="process-here-label">you're here right now
+          <svg viewBox="0 0 44 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2C2 10 10 18 24 20C30 21 36 20 40 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M34 12L41 16.5L33 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
         <div class="process-step-number">01</div>
         <h3>On-Site Measure &amp; Quote</h3>
         <p>We meet on-site to inspect your space, assess ground levels, sun orientation, and structural attachment points, and review your ideas.</p>
