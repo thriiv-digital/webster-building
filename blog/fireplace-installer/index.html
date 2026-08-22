@@ -225,9 +225,10 @@
   /* FOOTER */
   footer { background:var(--black); color:var(--white); padding:80px 24px 32px; }
   .footer-inner { max-width:1240px; margin:0 auto; }
-  .footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:48px; padding-bottom:52px; margin-bottom:28px; border-bottom:1px solid rgba(255,255,255,0.12); }
-  @media (max-width:860px) { .footer-grid { grid-template-columns:1fr 1fr; gap:40px 24px; } }
-  @media (max-width:520px) { .footer-grid { grid-template-columns:1fr; gap:36px; } }
+  .footer-grid { display:grid; grid-template-columns:1.2fr 1fr 1fr 1fr 1fr; gap:40px; padding-bottom:52px; margin-bottom:28px; border-bottom:1px solid rgba(255,255,255,0.12); }
+  @media (max-width:1000px) { .footer-grid { grid-template-columns:1fr 1fr 1fr; gap:32px 24px; } }
+  @media (max-width:640px) { .footer-grid { grid-template-columns:1fr 1fr; gap:32px 24px; } }
+  @media (max-width:420px) { .footer-grid { grid-template-columns:1fr; gap:28px; } }
   .footer-brand-logo { height:120px; width:auto; margin-bottom:18px; }
   @media (max-width:520px) { .footer-brand-logo { height:64px; } }
   .footer-brand p { color:rgba(255,255,255,0.7); font-size:14.5px; max-width:320px; margin-bottom:22px; }
@@ -466,6 +467,14 @@
           <li><a href="/services/decks-pergolas/">Decks &amp; Pergolas</a></li>
           <li><a href="#" class="enquire-link" data-modal="quoteModal">Fencing</a></li>
           <li><a href="/services/carpentry/">Residential Carpentry &amp; Repairs</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Service Areas">
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="/areas/dapto/">Dapto</a></li>
+          <li><a href="/areas/kiama/">Kiama</a></li>
+          <li><a href="/about-us/">Full service area</a></li>
         </ul>
       </nav>
       <nav class="footer-col" aria-label="Company">
